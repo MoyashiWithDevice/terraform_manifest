@@ -12,3 +12,14 @@ provider "proxmox-pve-1"{
 
     random_vm_ids = true
 }
+
+terraform {
+    required_version = ">=1.15"
+
+    required_providers{
+        proxmox = {
+            source = "bgp/proxmox"
+            version = ">=0.109"
+        }
+    }
+}
