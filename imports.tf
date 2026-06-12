@@ -1,55 +1,55 @@
 # imports.tf
 import {
   to = proxmox_virtual_environment_vm.vm_100
-  id = "100"
+  id = "pve-1/100"
 }
 
 import {
   to = proxmox_virtual_environment_vm.vm_107
-  id = "107"
+  id = "pve-1/107"
 }
 
 import {
   to = proxmox_virtual_environment_vm.vm_108
-  id = "108"
+  id = "pve-1/108"
 }
 
 import {
   to = proxmox_virtual_environment_vm.vm_111
-  id = "111"
+  id = "pve-1/111"
 }
 
 import {
   to = proxmox_virtual_environment_vm.vm_112
-  id = "112"
+  id = "pve-1/112"
 }
 
 import {
   to = proxmox_virtual_environment_vm.vm_113
-  id = "113"
+  id = "pve-1/113"
 }
 
 import {
   to = proxmox_virtual_environment_vm.vm_114
-  id = "114"
+  id = "pve-1/114"
 }
 
 import {
   to = proxmox_virtual_environment_vm.vm_116
-  id = "116"
+  id = "pve-1/116"
 }
 
 import {
   to = proxmox_virtual_environment_vm.vm_117
-  id = "117"
+  id = "pve-1/117"
 }
 
 import {
   to = proxmox_virtual_environment_vm.vm_118
-  id = "118"
+  id = "pve-1/118"
 }
 
 import {
   to = proxmox_virtual_environment_vm.template_9000
-  id = "9000"
+  id = "pve-1/9000"
 }
