@@ -1,4 +1,4 @@
 import{
-    provider = "proxmox-pve-1"
+    provider = "proxmox"
     id = "proxmox"
 }
