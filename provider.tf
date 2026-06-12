@@ -22,4 +22,10 @@ terraform {
             version = ">=0.109"
         }
     }
+
+    backend "kubernetes" {
+        secret_suffix    = "tfstate"
+        namespace        = "terraform"
+        load_config_file = true
+    }
 }
