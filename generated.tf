@@ -18,7 +18,7 @@ resource "proxmox_virtual_environment_vm" "vm_117" {
   network_device = [{
     bridge       = "vmbr0"
     disconnected = false
-    enabled      = true
+    enabled      = false
     firewall     = true
     mac_address  = "BC:24:11:5D:1D:6D"
     model        = "virtio"
@@ -113,7 +113,7 @@ resource "proxmox_virtual_environment_vm" "vm_112" {
   network_device = [{
     bridge       = "vmbr0"
     disconnected = false
-    enabled      = true
+    enabled      = false
     firewall     = true
     mac_address  = "BC:24:11:9C:5D:70"
     model        = "virtio"
@@ -209,7 +209,7 @@ resource "proxmox_virtual_environment_vm" "template_9000" {
   network_device = [{
     bridge       = "vmbr0"
     disconnected = false
-    enabled      = true
+    enabled      = false
     firewall     = false
     mac_address  = "BC:24:11:84:1B:4F"
     model        = "virtio"
@@ -269,12 +269,19 @@ resource "proxmox_virtual_environment_vm" "template_9000" {
     interface    = "ide2"
     upgrade      = true
   }
+  cpu {
+    cores        = 2
+    numa         = true
+    sockets      = 1
+    type         = "qemu64"
+    units        = 1
+  }
   memory {
-    dedicated      = 0
+    dedicated      = 512
     floating       = 0
     hugepages      = null
-    keep_hugepages = false
     shared         = 0
+    keep_hugepages = false
   }
   operating_system {
     type = null
@@ -298,7 +305,7 @@ resource "proxmox_virtual_environment_vm" "vm_116" {
   network_device = [{
     bridge       = "vmbr0"
     disconnected = false
-    enabled      = true
+    enabled      = false
     firewall     = true
     mac_address  = "BC:24:11:C0:7E:22"
     model        = "virtio"
@@ -388,7 +395,7 @@ resource "proxmox_virtual_environment_vm" "vm_107" {
   network_device = [{
     bridge       = "vmbr0"
     disconnected = false
-    enabled      = true
+    enabled      = false
     firewall     = true
     mac_address  = "BC:24:11:7D:32:90"
     model        = "virtio"
@@ -490,7 +497,7 @@ resource "proxmox_virtual_environment_vm" "vm_111" {
   network_device = [{
     bridge       = "vmbr0"
     disconnected = false
-    enabled      = true
+    enabled      = false
     firewall     = true
     mac_address  = "BC:24:11:66:28:4B"
     model        = "virtio"
@@ -585,7 +592,7 @@ resource "proxmox_virtual_environment_vm" "vm_114" {
   network_device = [{
     bridge       = "vmbr0"
     disconnected = false
-    enabled      = true
+    enabled      = false
     firewall     = true
     mac_address  = "BC:24:11:81:56:E1"
     model        = "virtio"
@@ -675,7 +682,7 @@ resource "proxmox_virtual_environment_vm" "vm_113" {
   network_device = [{
     bridge       = "vmbr0"
     disconnected = false
-    enabled      = true
+    enabled      = false
     firewall     = true
     mac_address  = "BC:24:11:DF:28:8D"
     model        = "virtio"
