@@ -1,0 +1,198 @@
+
+# __generated__ by Terraform
+resource "proxmox_virtual_environment_vm" "vm_107" {
+  acpi                                 = true
+  bios                                 = "ovmf"
+  boot_order                           = ["scsi0", "net0", "ide0"]
+  delete_unreferenced_disks_on_destroy = true
+  description                          = null
+  hook_script_file_id                  = null
+  keyboard_layout                      = "en-us"
+  kvm_arguments                        = null
+  mac_addresses                        = ["BC:24:11:7D:32:90"]
+  machine                              = null
+  migrate                              = false
+  name                                 = "cml"
+  network_device = [{
+    enabled      = true
+    bridge       = "vmbr0"
+    disconnected = false
+    firewall     = true
+    mac_address  = "BC:24:11:7D:32:90"
+    model        = "virtio"
+    mtu          = 0
+    queues       = 0
+    rate_limit   = 0
+    trunks       = ""
+    vlan_id      = 10
+  }]
+  node_name           = "pve-1"
+  on_boot             = false
+  pool_id             = null
+  protection          = false
+  purge_on_destroy    = true
+  reboot              = false
+  reboot_after_update = false
+  scsi_hardware       = "virtio-scsi-single"
+  started             = false
+  stop_on_destroy     = false
+  tablet_device       = true
+  tags                = []
+  template            = false
+  timeout_clone       = 1800
+  timeout_create      = 1800
+  timeout_migrate     = 1800
+  timeout_reboot      = 1800
+  timeout_shutdown_vm = 1800
+  timeout_start_vm    = 1800
+  timeout_stop_vm     = 300
+  vm_id               = 107
+  agent {
+    enabled = true
+    timeout = "15m"
+    trim    = false
+    type    = "virtio"
+  }
+  cpu {
+    affinity     = null
+    architecture = null
+    cores        = 4
+    flags        = []
+    hotplugged   = 0
+    limit        = 0
+    numa         = false
+    sockets      = 1
+    type         = "host"
+    units        = 1
+  }
+  disk {
+    aio               = "io_uring"
+    backup            = true
+    cache             = "none"
+    datastore_id      = "data"
+    discard           = "ignore"
+    file_format       = "raw"
+    file_id           = null
+    import_from       = null
+    interface         = "scsi0"
+    iothread          = true
+    path_in_datastore = "vm-107-disk-0"
+    queues            = 0
+    replicate         = true
+    serial            = null
+    size              = 48
+    ssd               = false
+  }
+  efi_disk {
+    datastore_id      = "data"
+    file_format       = "raw"
+    pre_enrolled_keys = true
+    type              = "4m"
+  }
+  memory {
+    dedicated      = 16384
+    floating       = 16384
+    hugepages      = null
+    keep_hugepages = false
+    shared         = 0
+  }
+  operating_system {
+    type = "l26"
+  }
+}
+
+# __generated__ by Terraform
+resource "proxmox_virtual_environment_vm" "vm_112" {
+  acpi                                 = true
+  bios                                 = "seabios"
+  boot_order                           = ["scsi0", "ide2", "net0"]
+  delete_unreferenced_disks_on_destroy = true
+  description                          = null
+  hook_script_file_id                  = null
+  keyboard_layout                      = "en-us"
+  kvm_arguments                        = null
+  mac_addresses                        = ["BC:24:11:9C:5D:70"]
+  machine                              = null
+  migrate                              = false
+  name                                 = "vyos-1"
+  network_device = [{
+    enabled      = true
+    bridge       = "vmbr0"
+    disconnected = false
+    firewall     = true
+    mac_address  = "BC:24:11:9C:5D:70"
+    model        = "virtio"
+    mtu          = 0
+    queues       = 0
+    rate_limit   = 0
+    trunks       = ""
+    vlan_id      = 20
+  }]
+  node_name           = "pve-1"
+  on_boot             = false
+  pool_id             = null
+  protection          = false
+  purge_on_destroy    = true
+  reboot              = false
+  reboot_after_update = false
+  scsi_hardware       = "virtio-scsi-single"
+  started             = false
+  stop_on_destroy     = false
+  tablet_device       = true
+  tags                = []
+  template            = false
+  timeout_clone       = 1800
+  timeout_create      = 1800
+  timeout_migrate     = 1800
+  timeout_reboot      = 1800
+  timeout_shutdown_vm = 1800
+  timeout_start_vm    = 1800
+  timeout_stop_vm     = 300
+  vm_id               = 112
+  agent {
+    enabled = true
+    timeout = "15m"
+    trim    = false
+    type    = "virtio"
+  }
+  cpu {
+    affinity     = null
+    architecture = null
+    cores        = 2
+    flags        = []
+    hotplugged   = 0
+    limit        = 0
+    numa         = false
+    sockets      = 1
+    type         = "kvm64"
+    units        = 1
+  }
+  disk {
+    aio               = "io_uring"
+    backup            = true
+    cache             = "none"
+    datastore_id      = "data"
+    discard           = "ignore"
+    file_format       = "raw"
+    file_id           = null
+    import_from       = null
+    interface         = "scsi0"
+    iothread          = true
+    path_in_datastore = "vm-112-disk-0"
+    queues            = 0
+    replicate         = true
+    serial            = null
+    size              = 64
+    ssd               = false
+  }
+  memory {
+    dedicated      = 4096
+    floating       = 4096
+    hugepages      = null
+    keep_hugepages = false
+    shared         = 0
+  }
+  operating_system {
+    type = "l26"
+  }
+}
