@@ -43,7 +43,7 @@ resource "proxmox_virtual_environment_vm" "vm_119" {
   timeout_shutdown_vm = 1800
   timeout_start_vm    = 1800
   timeout_stop_vm     = 300
-  vm_id               = 118
+  vm_id               = 119
   agent {
     enabled = true
     timeout = "15m"
