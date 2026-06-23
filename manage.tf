@@ -1,7 +1,7 @@
 
 resource "proxmox_virtual_environment_vm" "vm_119" {
   clone{
-    vm_id = proxmox_virtual_environment_vm.template_9000
+    vm_id = proxmox_virtual_environment_vm.template_9000.vm_id
   } 
   acpi                                 = true
   bios                                 = "seabios"
