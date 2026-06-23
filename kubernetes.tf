@@ -319,6 +319,7 @@ resource "proxmox_virtual_environment_vm" "vm_119" {
     disconnected = false
     firewall     = true
     model        = "virtio"
+    mac_address  = ""
     mtu          = 0
     queues       = 0
     rate_limit   = 0
