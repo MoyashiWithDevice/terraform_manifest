@@ -1,0 +1,11 @@
+stages:
+- update-container
+pull-latest:
+  stage: update-container
+  image: alpine/kubectl:latest
+  script:
+  - echo "container update is starting now..."
+  - kubectl rollout restart deployment/terraform-app -n terraform
+  - echo "completed"
+  tags:
+  - terraform
