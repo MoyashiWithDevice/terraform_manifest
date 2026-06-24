@@ -102,9 +102,6 @@ resource "proxmox_virtual_environment_vm" "vm_119" {
     dns{
       servers = ["172.32.0.5"]
     }
-    user_account{
-      username = var.PROXMOX_VE_SSH_USERNAME
-      password = var.PROXMOX_VE_SSH_PASSWORD
-    }
+    user_data_file_id = proxmox_virtual_environment_file.user_data_cloud_config.id
   }
 }
