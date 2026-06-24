@@ -93,4 +93,18 @@ resource "proxmox_virtual_environment_vm" "vm_119" {
   operating_system {
     type = "l26"
   }
+  initialization{
+    ip_config{
+      ipv4{
+        address = "dhcp"
+      }
+    }
+    dns{
+      servers = ["172.32.0.5"]
+    }
+    user_account{
+      username = var.PROXMOX_VE_SSH_USERNAME
+      password = var.PROXMOX_VE_SSH_PASSWORD
+    }
+  }
 }
