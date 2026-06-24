@@ -7,3 +7,5 @@ pull-latest:
   - echo "container update is starting now..."
   - kubectl rollout restart deployment/terraform-app -n terraform
   - echo "completed"
+  tags:
+  - Kubernetes
