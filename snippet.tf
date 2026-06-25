@@ -7,14 +7,20 @@ resource "proxmox_virtual_environment_file" "user_data_cloud_config" {
     data = <<-EOF
     #cloud-config
     timezone: Asia/Tokyo
+
+    ssh_pwauth: true
+
     users:
-      - default
       - name: ${var.VM_USERNAME}
-        password: ${var.VM_PASSWORD}
         groups:
           - sudo
         shell: /bin/bash
         sudo: ALL=(ALL:ALL) ALL
+
+    chpasswd:
+      list: |
+        ${var.VM_USERNAME}:${var.VM_PASSWORD}
+      expire: false
     package_update: true
     packages:
       - qemu-guest-agent
