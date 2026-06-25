@@ -197,7 +197,7 @@ resource "proxmox_virtual_environment_vm" "vm_112" {
   }
 }
 
-resource "proxmox_virtual_environment_vm" "vm_112" {
+resource "proxmox_virtual_environment_vm" "vm_120" {
   clone{
     vm_id = proxmox_virtual_environment_vm.template_9000.vm_id
   } 
