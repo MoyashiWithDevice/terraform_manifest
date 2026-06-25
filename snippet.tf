@@ -28,6 +28,7 @@ resource "proxmox_virtual_environment_file" "user_data_cloud_config" {
       - mkdir -p /etc/ssh
       - curl -o /etc/ssh/trusted-user-ca-keys.pem http://172.31.0.230:8200/v1/ssh-client-signer/public_key
       - echo "TrustedUserCAKeys /etc/ssh/trusted-user-ca-keys.pem" | tee -a /etc/ssh/sshd_config
+      - systemctl restart ssh
       - systemctl restart sshd
     EOF
 
