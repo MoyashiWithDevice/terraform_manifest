@@ -108,7 +108,7 @@ resource "proxmox_virtual_environment_vm" "vm_113" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = "BC:24:11:62:C1:14"
+    mac_address  = "BC:24:11:62:C1:13"
     model        = "virtio"
     mtu          = 0
     queues       = 0
