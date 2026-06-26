@@ -8,7 +8,6 @@ resource "proxmox_virtual_environment_vm" "vm_100" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["00:00:00:00:00:00", "BC:24:11:62:CF:2B", "66:19:EB:F8:9E:2D", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE"]
   machine                              = null
   migrate                              = false
   name                                 = "kube-1"
@@ -17,7 +16,7 @@ resource "proxmox_virtual_environment_vm" "vm_100" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = "BC:24:11:62:CF:2B"
+    mac_address  = "BC:24:11:62:C1:00"
     model        = "virtio"
     mtu          = 0
     queues       = 0
@@ -109,7 +108,6 @@ resource "proxmox_virtual_environment_vm" "vm_117" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["00:00:00:00:00:00", "BC:24:11:5D:1D:6D", "66:AC:3C:4D:EC:A9", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "3E:01:5F:95:66:76", "EE:EE:EE:EE:EE:EE"]
   machine                              = null
   migrate                              = false
   name                                 = "kube-2"
@@ -118,7 +116,7 @@ resource "proxmox_virtual_environment_vm" "vm_117" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = "BC:24:11:5D:1D:6D"
+    mac_address  = "BC:24:11:62:C1:17"
     model        = "virtio"
     mtu          = 0
     queues       = 0
@@ -210,7 +208,6 @@ resource "proxmox_virtual_environment_vm" "vm_118" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["00:00:00:00:00:00", "BC:24:11:E6:13:06", "66:58:DC:96:BA:26", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE", "EE:EE:EE:EE:EE:EE"]
   machine                              = null
   migrate                              = false
   name                                 = "kube-3"
@@ -219,7 +216,7 @@ resource "proxmox_virtual_environment_vm" "vm_118" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = "BC:24:11:E6:13:06"
+    mac_address  = "BC:24:11:62:C1:18"
     model        = "virtio"
     mtu          = 0
     queues       = 0

@@ -11,7 +11,6 @@ resource "proxmox_virtual_environment_vm" "vm_114" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["BC:24:11:81:56:E1"]
   machine                              = null
   migrate                              = false
   name                                 = "u22"
@@ -20,7 +19,7 @@ resource "proxmox_virtual_environment_vm" "vm_114" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = "BC:24:11:81:56:E1"
+    mac_address  = "BC:24:11:62:C1:14"
     model        = "virtio"
     mtu          = 0
     queues       = 0
@@ -101,7 +100,6 @@ resource "proxmox_virtual_environment_vm" "vm_113" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["BC:24:11:DF:28:8D"]
   machine                              = null
   migrate                              = false
   name                                 = "u22-1"
@@ -110,7 +108,7 @@ resource "proxmox_virtual_environment_vm" "vm_113" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = "BC:24:11:DF:28:8D"
+    mac_address  = "BC:24:11:62:C1:14"
     model        = "virtio"
     mtu          = 0
     queues       = 0
@@ -191,7 +189,6 @@ resource "proxmox_virtual_environment_vm" "vm_116" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["BC:24:11:C0:7E:22"]
   machine                              = null
   migrate                              = false
   name                                 = "wordpress"
@@ -200,7 +197,7 @@ resource "proxmox_virtual_environment_vm" "vm_116" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = "BC:24:11:C0:7E:22"
+    mac_address  = "BC:24:11:62:C1:13"
     model        = "virtio"
     mtu          = 0
     queues       = 0

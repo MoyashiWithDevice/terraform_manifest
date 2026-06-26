@@ -8,7 +8,6 @@ resource "proxmox_virtual_environment_vm" "vm_111" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["00:00:00:00:00:00", "BC:24:11:66:28:4B", "B6:F7:90:43:F0:25", "0E:E4:E4:C7:C1:CC", "DA:81:07:37:11:86"]
   machine                              = null
   migrate                              = false
   name                                 = "Git-Lab"
@@ -17,7 +16,7 @@ resource "proxmox_virtual_environment_vm" "vm_111" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = "BC:24:11:66:28:4B"
+    mac_address  = "BC:24:11:62:C1:11"
     model        = "virtio"
     mtu          = 0
     queues       = 0
@@ -109,7 +108,6 @@ resource "proxmox_virtual_environment_vm" "vm_108" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["00:00:00:00:00:00", "BC:24:11:1D:6D:2A", "00:00:00:00:00:00", "1E:34:34:D2:7B:08"]
   machine                              = null
   migrate                              = false
   name                                 = "VPN"
@@ -118,7 +116,7 @@ resource "proxmox_virtual_environment_vm" "vm_108" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = "BC:24:11:1D:6D:2A"
+    mac_address  = "BC:24:11:62:C1:08"
     model        = "virtio"
     mtu          = 0
     queues       = 0

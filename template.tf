@@ -8,7 +8,6 @@ resource "proxmox_virtual_environment_vm" "template_9000" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["BC:24:11:84:1B:4F"]
   machine                              = null
   migrate                              = false
   name                                 = "ubuntu-template"
@@ -17,7 +16,7 @@ resource "proxmox_virtual_environment_vm" "template_9000" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = false
-    mac_address  = "BC:24:11:84:1B:4F"
+    mac_address  = "BC:24:11:62:90:00"
     model        = "virtio"
     mtu          = 0
     queues       = 0

@@ -9,7 +9,6 @@ resource "proxmox_virtual_environment_vm" "vm_107" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["BC:24:11:7D:32:90"]
   machine                              = null
   migrate                              = false
   name                                 = "cml"
@@ -18,7 +17,7 @@ resource "proxmox_virtual_environment_vm" "vm_107" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = "BC:24:11:7D:32:90"
+    mac_address  = "BC:24:11:62:C1:07"
     model        = "virtio"
     mtu          = 0
     queues       = 0
@@ -111,7 +110,6 @@ resource "proxmox_virtual_environment_vm" "vm_112" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["BC:24:11:9C:5D:70"]
   machine                              = null
   migrate                              = false
   name                                 = "vyos-1"
@@ -120,7 +118,7 @@ resource "proxmox_virtual_environment_vm" "vm_112" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = "BC:24:11:9C:5D:70"
+    mac_address  = "BC:24:11:62:C1:12"
     model        = "virtio"
     mtu          = 0
     queues       = 0
@@ -209,7 +207,6 @@ resource "proxmox_virtual_environment_vm" "vm_120" {
   hook_script_file_id                  = null
   keyboard_layout                      = "en-us"
   kvm_arguments                        = null
-  mac_addresses                        = ["BC:24:11:9C:5D:70"]
   machine                              = null
   migrate                              = false
   name                                 = "test-kratos"
@@ -218,7 +215,7 @@ resource "proxmox_virtual_environment_vm" "vm_120" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = true
-    mac_address  = ""
+    mac_address  = "BC:24:11:62:C1:20"
     model        = "virtio"
     mtu          = 0
     queues       = 0
