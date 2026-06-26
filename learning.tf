@@ -124,7 +124,7 @@ resource "proxmox_virtual_environment_vm" "vm_112" {
     queues       = 0
     rate_limit   = 0
     trunks       = ""
-    vlan_id      = 20
+    vlan_id      = 0
   }]
   node_name           = "pve-1"
   on_boot             = false
@@ -221,6 +221,7 @@ resource "proxmox_virtual_environment_vm" "vm_120" {
     queues       = 0
     rate_limit   = 0
     trunks       = ""
+    vlan_id      = 0
   }]
   node_name           = "pve-1"
   on_boot             = false
