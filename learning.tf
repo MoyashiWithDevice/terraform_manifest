@@ -296,7 +296,7 @@ resource "proxmox_virtual_environment_vm" "vm_120" {
       }
     }
     dns{
-      servers = ["172.32.0.5"]
+      servers = ["172.31.0.232"]
     }
     user_data_file_id = proxmox_virtual_environment_file.user_data_cloud_config.id
   }
