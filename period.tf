@@ -140,13 +140,13 @@ resource "proxmox_virtual_environment_vm" "vm_113" {
   cpu {
     affinity     = null
     architecture = null
-    cores        = 2
+    cores        = 3
     flags        = []
     hotplugged   = 0
     limit        = 0
     numa         = false
     sockets      = 1
-    type         = "kvm64"
+    type         = "host"
     units        = 1
   }
   disk {
@@ -168,8 +168,8 @@ resource "proxmox_virtual_environment_vm" "vm_113" {
     ssd               = false
   }
   memory {
-    dedicated      = 4096
-    floating       = 4096
+    dedicated      = 8192
+    floating       = 8192
     hugepages      = null
     keep_hugepages = false
     shared         = 0
