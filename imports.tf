@@ -10,11 +10,6 @@ import {
 }
 
 import {
-  to = proxmox_virtual_environment_vm.vm_108
-  id = "pve-1/108"
-}
-
-import {
   to = proxmox_virtual_environment_vm.vm_111
   id = "pve-1/111"
 }
