@@ -173,7 +173,6 @@ resource "proxmox_virtual_environment_vm" "vm_120" {
     import_from       = null
     interface         = "scsi0"
     iothread          = true
-    path_in_datastore = "vm-120-disk-0"
     queues            = 0
     replicate         = true
     serial            = null
