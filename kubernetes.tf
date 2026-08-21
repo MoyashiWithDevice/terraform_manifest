@@ -15,7 +15,7 @@ resource "proxmox_virtual_environment_vm" "vm_100" {
     enabled      = true
     bridge       = "vmbr0"
     disconnected = false
-    firewall     = true
+    firewall     = false
     mac_address  = "BC:24:11:62:C1:00"
     model        = "virtio"
     mtu          = 0
@@ -115,7 +115,7 @@ resource "proxmox_virtual_environment_vm" "vm_117" {
     enabled      = true
     bridge       = "vmbr0"
     disconnected = false
-    firewall     = true
+    firewall     = false
     mac_address  = "BC:24:11:62:C1:17"
     model        = "virtio"
     mtu          = 0
@@ -215,7 +215,7 @@ resource "proxmox_virtual_environment_vm" "vm_118" {
     enabled      = true
     bridge       = "vmbr0"
     disconnected = false
-    firewall     = true
+    firewall     = false
     mac_address  = "BC:24:11:62:C1:18"
     model        = "virtio"
     mtu          = 0
