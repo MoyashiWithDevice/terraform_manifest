@@ -12,7 +12,6 @@ resource "proxmox_virtual_environment_vm" "vm_111" {
   migrate                              = false
   name                                 = "Git-Lab"
   network_device = [{
-    enabled      = true
     bridge       = "vmbr0"
     disconnected = false
     firewall     = false 
@@ -111,7 +110,6 @@ resource "proxmox_virtual_environment_vm" "vm_120" {
   migrate                              = false
   name                                 = "LDAP"
   network_device = [{
-    enabled      = true
     bridge       = "vmbr0"
     disconnected = false
     firewall     = false
