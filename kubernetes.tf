@@ -12,6 +12,7 @@ resource "proxmox_virtual_environment_vm" "vm_100" {
   migrate                              = false
   name                                 = "kube-1"
   network_device = [{
+    enabled      = true
     bridge       = "vmbr0"
     disconnected = false
     firewall     = false
@@ -111,6 +112,7 @@ resource "proxmox_virtual_environment_vm" "vm_117" {
   migrate                              = false
   name                                 = "kube-2"
   network_device = [{
+    enabled      = true
     bridge       = "vmbr0"
     disconnected = false
     firewall     = false
@@ -210,6 +212,7 @@ resource "proxmox_virtual_environment_vm" "vm_118" {
   migrate                              = false
   name                                 = "kube-3"
   network_device = [{
+    enabled      = true
     bridge       = "vmbr0"
     disconnected = false
     firewall     = false

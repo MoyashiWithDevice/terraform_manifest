@@ -13,6 +13,7 @@ resource "proxmox_virtual_environment_vm" "vm_107" {
   migrate                              = false
   name                                 = "cml"
   network_device = [{
+    enabled      = true
     bridge       = "vmbr0"
     disconnected = false
     firewall     = false

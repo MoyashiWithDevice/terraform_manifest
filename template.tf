@@ -12,6 +12,7 @@ resource "proxmox_virtual_environment_vm" "template_9000" {
   migrate                              = false
   name                                 = "ubuntu-template"
   network_device = [{
+    enabled      = true
     bridge       = "vmbr0"
     disconnected = false
     firewall     = false
