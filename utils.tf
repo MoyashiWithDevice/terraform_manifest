@@ -99,6 +99,9 @@ resource "proxmox_virtual_environment_vm" "vm_111" {
 }
 
 resource "proxmox_virtual_environment_vm" "vm_120" {
+  clone{
+    vm_id = proxmox_virtual_environment_vm.template_9000.vm_id
+  } 
   acpi                                 = true
   bios                                 = "seabios"
   boot_order                           = ["scsi0", "net0"]
@@ -115,8 +118,8 @@ resource "proxmox_virtual_environment_vm" "vm_120" {
     bridge       = "vmbr0"
     disconnected = false
     firewall     = false
-    mac_address  = "BC:24:11:62:C1:20"
     model        = "virtio"
+    mac_address  = "BC:24:11:62:C1:20"
     mtu          = 0
     queues       = 0
     rate_limit   = 0
@@ -153,7 +156,7 @@ resource "proxmox_virtual_environment_vm" "vm_120" {
   cpu {
     affinity     = null
     architecture = null
-    cores        = 5
+    cores        = 3
     flags        = []
     hotplugged   = 0
     limit        = 0
@@ -176,12 +179,12 @@ resource "proxmox_virtual_environment_vm" "vm_120" {
     queues            = 0
     replicate         = true
     serial            = null
-    size              = 64
+    size              = 32
     ssd               = false
   }
   memory {
-    dedicated      = 12288
-    floating       = 12288
+    dedicated      = 4096
+    floating       = 4096
     hugepages      = null
     keep_hugepages = false
     shared         = 0
@@ -189,9 +192,15 @@ resource "proxmox_virtual_environment_vm" "vm_120" {
   operating_system {
     type = "l26"
   }
-  startup {
-    down_delay = -1
-    order      = 5
-    up_delay   = -1
+  initialization{
+    ip_config{
+      ipv4{
+        address = "dhcp"
+      }
+    }
+    dns{
+      servers = ["172.31.10.232"]
+    }
+    user_data_file_id = proxmox_virtual_environment_file.user_data_cloud_config.id
   }
 }
