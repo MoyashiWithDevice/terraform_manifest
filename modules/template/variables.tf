@@ -3,8 +3,8 @@ variable "file_name"{
   nullable = true
   
   validation {
-    condition = var.file_name == null
-      || can(regex("\\.(img|qcow2)$", var.file_name))
+    condition = (var.file_name == null
+      || can(regex("\\.(img|qcow2)$", var.file_name)))
     error_message = "You need to specify '.img' or '.qcow2'."
   }
 }
@@ -19,7 +19,7 @@ variable "src_url"{
   validation{
     condition = can(regex("\\.(img|qcow2)$", var.src_url))
     error_message = "You can download cloud-image files only '.img' or 'qcow2'."
-}
+  }
 }
 variable "name"{
   type = string
