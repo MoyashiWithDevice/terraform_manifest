@@ -52,11 +52,11 @@ variable "ip_address"{
 }
 variable "template_id"{
   type = number
-  default = true
+  default = null
 }
 variable "user_data_file_id"{
   type = string
-  default = true
+  default = null
 }
 variable "dns_servers"{
   type = list(string)
