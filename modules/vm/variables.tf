@@ -52,7 +52,7 @@ variable "ip_address"{
 }
 variable "template_id"{
   type = number
-  nullable = true
+  default = true
 }
 variable "user_data_file_id"{
   type = string
