@@ -11,6 +11,7 @@ module "cloud_config_snippet"{
       sudo = "ALL=(ALL:ALL) ALL"
     }
   ]
+  ssh_pwauth = true
   packages = ["qemu-guest-agent"]
   runcmd = [
     "mkdir -p /etc/ssh",
