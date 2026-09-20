@@ -82,7 +82,7 @@ module "manage-vm" {
   datastore_id      = "local-lvm"
   disk_gb              = 16
   memory_mb = 4096
-  template_id = module.ubuntu_template.template_id
+  template_id = module.ubuntu_2604_template.template_id
   dns_servers = ["172.31.10.232"]
   user_data_file_id = module.cloud_config_snippet.snippet-file-id
 }
@@ -112,7 +112,7 @@ module "ldap" {
   datastore_id      = "data"
   disk_gb              = 32
   memory_mb = 4096
-  template_id = module.ubuntu_template.template_id
+  template_id = module.ubuntu_2604_template.template_id
   dns_servers = ["172.31.10.232"]
   user_data_file_id = module.cloud_config_snippet.snippet-file-id
 }
