@@ -1,6 +1,6 @@
 variable "file_name"{
   type = string
-  nullable = true
+  default = null
   
   validation {
     condition = (var.file_name == null
