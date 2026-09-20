@@ -22,10 +22,9 @@ module "cloud_config_snippet"{
 }
 
 # Template Definition
-module "ubuntu_template"{
+module "ubuntu_2604_template"{
   source = "./modules/template"
   src_url = "https://cloud-images.ubuntu.com/resolute/current/resolute-server-cloudimg-amd64.img"
-  name = "Ubuntu_2604_Template"
   tags = ["template"]
   vm_id = 9000
   ide2_datastore_id = "data"

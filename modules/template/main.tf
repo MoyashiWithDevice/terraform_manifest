@@ -12,7 +12,7 @@ resource "proxmox_virtual_environment_vm" "templates"{
   boot_order                           = ["scsi0"]
   purge_on_destroy                     = true
   delete_unreferenced_disks_on_destroy = true
-  name                                 = var.name
+  name                                 = ""
   node_name           = var.node_name
   tags                = var.tags
   template            = true

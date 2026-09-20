@@ -21,10 +21,6 @@ variable "src_url"{
     error_message = "You can download cloud-image files only '.img' or 'qcow2'."
   }
 }
-variable "name"{
-  type = string
-  nullable = false
-}
 variable "node_name"{
   type = string
   default = "pve-1"
