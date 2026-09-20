@@ -1,4 +1,4 @@
-# Create Snippet File
+# Snippet Definition
 module "cloud_config_snippet"{
   source = "./modules/snippet"
 
@@ -21,6 +21,17 @@ module "cloud_config_snippet"{
   ]
 }
 
+# Template Definition
+module "ubuntu_template"{
+  source = "./modules/template"
+  src_url = "https://cloud-images.ubuntu.com/resolute/current/resolute-server-cloudimg-amd64.img"
+  name = "Ubuntu_2604_Template"
+  tags = ["template"]
+  vm_id = 9000
+  ide2_datastore_id = "data"
+}
+
+# VM Definition
 module "kube-1" {
   source         = "./modules/vm"
   vm_name        = "kube-1"
@@ -72,9 +83,9 @@ module "manage-vm" {
   datastore_id      = "local-lvm"
   disk_gb              = 16
   memory_mb = 4096
-  template_id = 9000
+  template_id = module.ubuntu_template.template_id
   dns_servers = ["172.31.10.232"]
-  user_data_file_id = proxmox_virtual_environment_file.user_data_cloud_config.id
+  user_data_file_id = module.cloud_config_snippet.snippet-file-id
 }
 module "git-lab" {
   source         = "./modules/vm"
@@ -102,7 +113,7 @@ module "ldap" {
   datastore_id      = "data"
   disk_gb              = 32
   memory_mb = 4096
-  template_id = 9000
+  template_id = module.ubuntu_template.template_id
   dns_servers = ["172.31.10.232"]
-  user_data_file_id = proxmox_virtual_environment_file.user_data_cloud_config.id
+  user_data_file_id = module.cloud_config_snippet.snippet-file-id
 }
