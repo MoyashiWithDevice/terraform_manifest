@@ -24,7 +24,8 @@ module "cloud_config_snippet"{
 # Template Definition
 module "ubuntu_2604_template"{
   source = "./modules/template"
-  content_type = "iso"
+  content_type = "import"
+  file_name = "resolute-server-cloudimg-amd64.qcow2"
   src_url = "https://cloud-images.ubuntu.com/resolute/current/resolute-server-cloudimg-amd64.img"
   tags = ["template"]
   vm_id = 9000
