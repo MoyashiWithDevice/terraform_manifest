@@ -85,6 +85,7 @@ module "manage-vm" {
   disk_gb              = 16
   memory_mb = 4096
   template_id = module.ubuntu_2604_template.template_id
+  ip_address = "172.31.10.100/24"
   dns_servers = ["172.31.10.232"]
   user_data_file_id = module.cloud_config_snippet.snippet-file-id
 }
