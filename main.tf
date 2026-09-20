@@ -106,7 +106,7 @@ module "git-lab" {
 module "ldap" {
   source         = "./modules/vm"
   vm_name        = "LDAP"
-  tags           = ["LDAP"]
+  tags           = ["ldap"]
   mac_address  = "BC:24:11:62:C1:20"
   vlan_id      = 10
   vm_id        = 120
@@ -118,4 +118,22 @@ module "ldap" {
   template_id = module.ubuntu_2604_template.template_id
   dns_servers = ["172.31.10.232"]
   user_data_file_id = module.cloud_config_snippet.snippet-file-id
+}
+module "cml" {
+  source         = "./modules/vm"
+  vm_name        = "cml"
+  tags           = []
+  mac_address  = "BC:24:11:62:C1:07"
+  vlan_id      = 10
+  vm_id        = 107
+  processor_cores        = 4
+  processor_type         = "host"
+  datastore_id      = "data"
+  disk_gb              = 48
+  memory_mb = 16384
+  dns_servers = ["172.31.10.232"]
+  bios = "ovmf"
+  efi_disk_datastore_id = "data"
+  efi_disk_type = "4m"
+  pre_enrolled_keys = true
 }

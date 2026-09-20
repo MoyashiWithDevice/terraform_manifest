@@ -1,6 +1,6 @@
 resource "proxmox_virtual_environment_vm" "machine-with-cloud-init"{
   acpi                                 = true
-  bios                                 = "seabios"
+  bios                                 = var.bios
   boot_order                           = ["scsi0", "net0"]
   delete_unreferenced_disks_on_destroy = true
   description                          = null
@@ -10,6 +10,14 @@ resource "proxmox_virtual_environment_vm" "machine-with-cloud-init"{
   machine                              = null
   migrate                              = false
   name                                 = var.vm_name
+  dynamic "efi_disk"{
+    for_each = var.bios == "ovmf" ? [1] : []
+    content{
+      datastore_id = coalesce(var.efi_disk_datastore_id, var.datastore_id)
+      pre_enrolled_keys = var.pre_enrolled_keys
+      type = var.efi_disk_type
+    }
+  }
   network_device = [{
     enabled      = true
     bridge       = var.nw_device

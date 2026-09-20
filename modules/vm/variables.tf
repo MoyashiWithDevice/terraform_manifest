@@ -34,6 +34,22 @@ variable "datastore_id"{
   type = string
   default = "data"
 }
+variable "bios"{
+  type = string
+  default = "seabios"
+}
+variable "efi_disk_datastore_id"{
+  type = string
+  default = "data"
+}
+variable "efi_disk_type"{
+  type = string
+  default = "2m"
+}
+variable "pre_enrolled_keys"{
+  type = bool
+  default = false
+}
 variable "disk_gb"{
   type = number
   default = 16
