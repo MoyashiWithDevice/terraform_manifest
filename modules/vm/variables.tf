@@ -56,7 +56,7 @@ variable "template_id"{
 }
 variable "user_data_file_id"{
   type = string
-  nullable = true
+  default = true
 }
 variable "dns_servers"{
   type = list(string)
