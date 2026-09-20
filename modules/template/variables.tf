@@ -1,3 +1,12 @@
+variable "content_type"{
+  type = string
+  default = "import"
+
+  validation{
+    condition = var.content_type == "import" || var.content_type == "iso"
+    error_message = "Unsupported content type. only 'import' and 'iso'"
+  }
+}
 variable "file_name"{
   type = string
   default = null
