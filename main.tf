@@ -1,7 +1,6 @@
 # Snippet Definition
 module "cloud_config_snippet"{
   source = "./modules/snippet"
-  file_name = "default_script.yaml"
   users = [
     {
       name = var.VM_USERNAME,
