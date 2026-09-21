@@ -114,6 +114,7 @@ resource "proxmox_virtual_environment_vm" "machine-with-cloud-init"{
       ip_config{
         ipv4{
           address = var.ip_address
+          gateway = format("172.31.%s.254", var.vm_id)
         }
       }
       dns{
