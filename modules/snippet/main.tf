@@ -23,7 +23,7 @@ resource "proxmox_virtual_environment_file" "cloud_config_snippet"{
   datastore_id = var.datastore_id
   node_name = var.node_name
   source_raw{
-    data = format("#cloud-config\n", local.cloud_config)
+    data = format("#cloud-config\n%s", local.cloud_config)
     file_name = "default_script-${substr(sha256(local.cloud_config), 0, 8)}.yaml"
   }
 }
