@@ -31,7 +31,3 @@ variable "runcmd"{
   type = list(string)
   default = []
 }
-variable "file_name"{
-  type = string
-  nullable = false
-}

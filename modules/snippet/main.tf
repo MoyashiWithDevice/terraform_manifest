@@ -3,9 +3,8 @@ resource "proxmox_virtual_environment_file" "cloud_config_snippet"{
   datastore_id = var.datastore_id
   node_name = var.node_name
 
-  source_raw {
-    data = yamlencode({
-      #cloud-config
+  locals {
+    cloud_config = "#cloud-config\n" ~ yamlencode({
       timezone = var.tz
       ssh_pwauth = var.ssh_pwauth
 
@@ -23,7 +22,11 @@ resource "proxmox_virtual_environment_file" "cloud_config_snippet"{
       packages = var.packages
       runcmd = var.runcmd
     })
-    file_name = var.file_name
+  }
+
+  source_raw{
+    data = local.cloud_config
+    file_name = "default_script-${substr(sha256(local.cloud_config), 0, 8)}.yaml"
   }
 }
 output "snippet-file-id"{
