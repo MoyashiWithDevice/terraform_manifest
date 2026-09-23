@@ -1,26 +1,3 @@
-# Snippet Definition
-module "cloud_config_snippet"{
-  source = "./modules/snippet"
-  users = [
-    {
-      name = var.VM_USERNAME,
-      password = var.VM_PASSWORD,
-      groups = ["sudo"],
-      shell = "/bin/bash",
-      sudo = "ALL=(ALL:ALL) ALL"
-    }
-  ]
-  ssh_pwauth = true
-  packages = ["qemu-guest-agent"]
-  runcmd = [
-    "mkdir -p /etc/ssh",
-    "curl -o /etc/ssh/trusted-user-ca-keys.pem -k https://vault.local.newvia.net:8200/v1/ssh-client-signer/public_key",
-    "echo 'TrustedUserCAKeys /etc/ssh/trusted-user-ca-keys.pem' | tee -a /etc/ssh/sshd_config",
-    "systemctl try-restart ssh || true",
-    "systemctl try-restart sshd || true"
-  ]
-}
-
 # Template Definition
 module "ubuntu_2604_template"{
   source = "./modules/template"
@@ -87,7 +64,6 @@ module "manage-vm" {
   template_id = module.ubuntu_2604_template.template_id
   ip_address = "172.31.10.100/24"
   dns_servers = ["172.31.10.232"]
-  user_data_file_id = module.cloud_config_snippet.snippet-file-id
 }
 module "git-lab" {
   source         = "./modules/vm"
@@ -103,10 +79,10 @@ module "git-lab" {
   memory_mb = 12288
 }
 
-module "ldap" {
+module "test" {
   source         = "./modules/vm"
-  vm_name        = "LDAP"
-  tags           = ["ldap"]
+  vm_name        = "test"
+  tags           = ["test"]
   mac_address  = "BC:24:11:62:C1:20"
   vlan_id      = 10
   vm_id        = 120
@@ -117,7 +93,6 @@ module "ldap" {
   memory_mb = 4096
   template_id = module.ubuntu_2604_template.template_id
   dns_servers = ["172.31.10.232"]
-  user_data_file_id = module.cloud_config_snippet.snippet-file-id
 }
 module "cml" {
   source         = "./modules/vm"

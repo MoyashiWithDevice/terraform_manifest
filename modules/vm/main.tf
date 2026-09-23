@@ -108,19 +108,20 @@ resource "proxmox_virtual_environment_vm" "machine-with-cloud-init"{
       vm_id = var.template_id
     }
   }
-  dynamic "initialization"{
-    for_each = var.user_data_file_id == null ? [] : [1]
-    content{
-      ip_config{
-        ipv4{
-          address = var.ip_address
-          gateway = format("172.31.%d.254", var.vm_id)
-        }
+  initialization{
+    user_account{
+      username = var.VM_USERNAME
+      password = var.VM_PASSWORD
+      keys = [var.VM_PUBKEY]
+    }
+    ip_config{
+      ipv4{
+        address = var.ip_address
+        gateway = format("172.31.%d.254", var.vm_id)
       }
-      dns{
-        servers = var.dns_servers
-      }
-      user_data_file_id = var.user_data_file_id
+    }
+    dns{
+      servers = var.dns_servers
     }
   }
 }

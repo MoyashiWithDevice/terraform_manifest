@@ -62,16 +62,24 @@ variable "mac_address"{
   type = string
   nullable = false
 }
+variable "VM_USERNAME"{
+  type = string
+  default = "user"
+}
+variable "VM_PASSWORD"{
+  type = string
+  default = "password"
+}
+variable "VM_PUBKEY"{
+  type = string
+  default = ""
+}
 variable "ip_address"{
   type = string
   default = "dhcp"
 }
 variable "template_id"{
   type = number
-  default = null
-}
-variable "user_data_file_id"{
-  type = string
   default = null
 }
 variable "dns_servers"{
